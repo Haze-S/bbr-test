@@ -28,17 +28,17 @@
       </header>
       
       
-      <form id="js-questForm">
+      <form id="js-questForm" onsubmit="doSubmit(event)">
           <p id="js-questText">질문</p>
         <div>
           <label for="">
-            <button class="js-test-form_Btn">선택1</button>
+            <button onclick="testBtnClick(event)" name = "1번버튼" value="1" class="js-test-form_btn">선택1</button>
           </label>
           <label for="">
-            <button class='js-test-form_Btn'>선택2</button>
+            <button onclick="testBtnClick(event)" name = "2번버튼" value="2" class='js-test-form_btn'>선택2</button>
           </label>
           <label for="">
-            <button class="js-test-form_Btn">선택3</button>
+            <button onclick="testBtnClick(event)" name = "3번버튼" value="3" class="js-test-form_btn">선택3</button>
           </label>
         </div>
       </form>
