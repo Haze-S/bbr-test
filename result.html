@@ -12,35 +12,45 @@
     
     
     <!-- stylesheet -->
-    <link rel="stylesheet" href="test.css" />
+    <link rel="stylesheet" href="result.css" />
     
-    <title>테스트 진행중</title>
+    <title>결과보기</title>
   </head>
   <body>
     <header id="pageHeader">
-      <h1> 나와 어울리는 빼빼로는 무엇일까?</h1>
+      <h1>나와 어울리는 빼빼로는 무엇일까?</h1>
     </header>
     
     
-    <section id="testContainer">
-      <form id="js-questForm" onsubmit="doSubmit(event)">
-          <p id="js-questText">질문</p>
-        <div>
-          <label for="">
-            <button onclick="testBtnClick(event)" name = "1번버튼" value="1" class="js-test-form_btn">선택1</button>
-          </label>
-          <label for="">
-            <button onclick="testBtnClick(event)" name = "2번버튼" value="2" class='js-test-form_btn'>선택2</button>
-          </label>
-          <label for="">
-            <button onclick="testBtnClick(event)" name = "3번버튼" value="3" class="js-test-form_btn">선택3</button>
-          </label>
-        </div>
+    <section id="resultContainer">
+      <header id="resultHeader">
+        결과보기!
+      </header>
+    <article>
+      <form id="resultForm" onsubmit="showResult(event)">
+        <button type="submit">
+          결과를확인하시려면 클릭해주세요!
+        </button>
       </form>
-    
+
+    </article>
+    <article id="resultArticle">
+      <div id= "resultTypeNameContainer" class="result-data_conatainer">
+        <h2 id="js-resultTypeName" class="js-result-data"> </h2>
+      </div>
+      <div id= "resultTypeImgContainer" class="result-data_conatainer">
+        <img id="js-resultTypeImg" class="js-result-data" src="" alt="">
+      </div>
+      <div id = "resultTypeDescContainer" class="result-data_conatainer">
+        <p id="js-resultTypeDesc" class="js-result-data">< /p>
+      </div>
+
+    </article>
+
 
     </section>
-    
+
+
 
     <footer>
       <div class="writer">
@@ -58,6 +68,6 @@
           </p>
       </div>
     </footer>
-    <script src="testpage.js"></script>
+    <script src="resultpage.js"></script>
   </body>
 </html>
