@@ -10,11 +10,10 @@
     <meta property="og:title" content="공유타이틀제목" />
     <meta property="og:description" conetnt="공유 설명란"/>
     
-    
     <!-- stylesheet -->
-    <link rel="stylesheet" href="test.css" />
+    <link rel="stylesheet" href="main.css" />
     
-    <title>테스트 진행중</title>
+    <title>뺴빼로 테스트 시작하기</title>
   </head>
   <body>
     <header id="pageHeader">
@@ -22,25 +21,24 @@
     </header>
     
     
-    <section id="testContainer">
-      <form id="js-questForm" onsubmit="doSubmit(event)">
-          <p id="js-questText">질문</p>
-        <div>
-          <label for="">
-            <button onclick="testBtnClick(event)" name = "1번버튼" value="1" class="js-test-form_btn">선택1</button>
-          </label>
-          <label for="">
-            <button onclick="testBtnClick(event)" name = "2번버튼" value="2" class='js-test-form_btn'>선택2</button>
-          </label>
-          <label for="">
-            <button onclick="testBtnClick(event)" name = "3번버튼" value="3" class="js-test-form_btn">선택3</button>
-          </label>
+    <section id="mainSection">
+      <header id="welcomeHeader">
+        빼빼로 심리검사 테스트에 참여하세요!
+      </header>
+      
+      <article>
+        <div ></div>
+        <p>현재 <span id='js-allUser'>000</span>명 참여중!</p>
+      
+        <div id="testLinkContainer" >
+          <a href="test.html">나도 참여하러 가기!</a>
         </div>
-      </form>
-    
+      </article>
 
     </section>
-    
+
+
+
 
     <footer>
       <div class="writer">
@@ -58,6 +56,8 @@
           </p>
       </div>
     </footer>
-    <script src="testpage.js"></script>
+
+
+    <script src="getAllUser.js"></script>
   </body>
 </html>
