@@ -1,0 +1,9 @@
+
+/* @import '../header.css'; */
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/css-social-buttons/1.4.0/css/zocial.min.css");
+@import './layout/init.css';
+@import './layout/header.css';
+@import './layout/footer.css';
+

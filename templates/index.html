@@ -11,27 +11,33 @@
     <meta property="og:description" conetnt="공유 설명란"/>
     
     <!-- stylesheet -->
-    <link rel="stylesheet" href="main.css" />
-    
+    <link rel="stylesheet" href="../static/css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/css-social-buttons/1.4.0/css/zocial.min.css" integrity="sha512-D+88+j7wBsrfUyRLxvAi/ZYJ+2xffS/A9skvhx8Q8cxXv5rVrNX5BYm+GblI1POb23bjAygg2nXytDHtoGc9lQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>뺴빼로 테스트 시작하기</title>
   </head>
   <body>
     <header id="pageHeader">
-      <h1> 나와 어울리는 빼빼로는 무엇일까?</h1>
+      
+      <h1>
+        <span id='h1-inner_span'>빼빼로 성격 유형 테스트</span></br>
+        나와 비슷한 <span style="font-size: large;">빼빼<span id="h1-ro_style">로</span></span>는 무엇일까?</h1>
     </header>
     
     
     <section id="mainSection">
-      <header id="welcomeHeader">
-        빼빼로 심리검사 테스트에 참여하세요!
-      </header>
-      
       <article>
-        <div ></div>
-        <p>현재 <span id='js-allUser'>000</span>명 참여중!</p>
-      
-        <div id="testLinkContainer" >
+        <div id ="participant">
+
+          <p id='participantText'>참여자수</p>
+          <p></span id='js-allUser'>123</span>명</p>      
+          
+        </div>
+        <div id="testLinkContainer"> 
           <a href="/test">나도 참여하러 가기!</a>
+        </div>
+            
+        <div id="imgContianer" >
+          <img id= "introImage" src="../static/img/intro.png" alt="">
         </div>
       </article>
 
@@ -41,23 +47,35 @@
 
 
     <footer>
-      <div class="writer">
-        <p>made by Haze-s</p>
-          <p>Contact information: 
-            <a href="github.com/haze-s"> Github</a>
-            <a href="">portfolio</a>
+      <p id="madeBy">made by haze-s, nerdhcanii</p>
+      
+      <div id ="writerContainer"> 
+        <div class="footer-writer_div">
+          
+          <p class="writer-contact_information">Haze
+            <a href="https://github.com/haze-s" >
+              <i class="fa fa-github"></i>
+            </a>
+            <a class="" href="">
+              <i class="fa fa-envelope-o" aria-hidden="true"></i>        
+            </a>
           </p>
-      </div>
-      <div class="writer">
-        <p>made by nerdchanii</p>
-          <p>Contact information: 
-            <a href="github.com/nerdchanii"> Github</a>
-            <a href="">portfolio</a>
+        </div>
+        <div class="footer-writer_div">
+          
+          <p class="writer-contact_information">nerdchanii
+            <a href="https://github.com/nerdchanii" >
+              <i class="fa fa-github" ></i>            
+            </a>     
+            <a class="" href="">
+              <i class="fa fa-envelope-o" aria-hidden="true"></i>        
+            </a>
           </p>
+        </div>
       </div>
     </footer>
 
 
-    <script src="getAllUser.js"></script>
+    <script src="../static/js/testpage.js"></script>
   </body>
 </html>

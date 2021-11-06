@@ -1,0 +1,23 @@
+* {
+  text-align: center;
+  padding: 0px;
+  margin : 0px;
+  /* font-size: small; */
+}
+
+html{
+  background-color: var(--bgcolor);
+  
+}
+
+body {
+  min-width: 320px;
+  max-width: 400px;
+  margin: 0 auto;
+  border: 1px solid red;
+}
+
+
+a{
+  text-decoration: none;
+}
