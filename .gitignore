@@ -1,3 +1,6 @@
 .idea/
 
-bbr.ppk
+# 모게~요?
+secret.py
+
+__pycache__/
