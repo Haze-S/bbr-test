@@ -12,13 +12,15 @@
     
     
     <!-- stylesheet -->
-    <link rel="stylesheet" href="test.css" />
+    <link rel="stylesheet" href="../static/css/testpage.css" />
     
     <title>테스트 진행중</title>
   </head>
   <body>
     <header id="pageHeader">
-      <h1> 나와 어울리는 빼빼로는 무엇일까?</h1>
+      <h1>
+        <span id='h1-inner_span'>빼빼로 성격 유형 테스트</span></br>
+        나와 비슷한 <span style="font-size: large;">빼빼<span id="h1-ro_style">로</span></span>는 무엇일까?</h1>
     </header>
     
     
@@ -44,21 +46,27 @@
     
 
     <footer>
-      <div class="writer">
-        <p>made by Haze-s</p>
-          <p>Contact information: 
-            <a href="github.com/haze-s"> Github</a>
-            <a href="">portfolio</a>
+      <p id="madeBy">made by haze-s, nerdhcanii</p>
+      <div id ="writerContainer"> 
+        
+        <div class="footer-writer_div">
+          <p class="writer-contact_information">Haze
+            <a href="https://github.com/haze-s" > <i class="fa fa-github"></i> </a>
+            <a class="" href=""> <i class="fa fa-envelope-o" aria-hidden="true"></i>        
+            </a>
           </p>
-      </div>
-      <div class="writer">
-        <p>made by nerdchanii</p>
-          <p>Contact information: 
-            <a href="github.com/nerdchanii"> Github</a>
-            <a href="">portfolio</a>
+        </div>
+
+        <div class="footer-writer_div">
+          <p class="writer-contact_information">nerdchanii
+            <a href="https://github.com/nerdchanii" > <i class="fa fa-github" ></i> </a>     
+            <a class="" href=""> <i class="fa fa-envelope-o" aria-hidden="true"></i> </a>
           </p>
+        </div>
+
       </div>
     </footer>
+
     <script src="../static/js/testpage.js"></script>
   </body>
 </html>
