@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/css-social-buttons/1.4.0/css/zocial.min.css");
+@import './init.css';
+@import './footer.css';
+@import './header.css';
+
+:root{
+  --red: rgb(248, 22, 29);
+  --brown: rgb(119, 17, 15);
+  --brown2: rgb(77,42,16);
+  --stick2: rgb(199, 164,121);
+  --stick: rgb(255, 174, 10);
+  --writerContainer: rgb(209,178,142);
+  --bgcolor: rgb(241,235,230);
+}
+
+
+
+
+/* 
+h1{
+  margin: 20px 2px 40px 2px;
+  font-family: 'Jua', sans-serif;
+  text-align: center;
+  font-weight: bolder;
+  color: var(--brown);
+  text-decoration: underline;
+  text-decoration-color: var(--stick);
+  text-underline-offset: -1px -1px;
+  text-shadow: 2px 3px var(--stick);  
+}
+
+#h1-ro_style{
+ color:var(--stick);
+ text-shadow: 2px 3px var(--brown);
+}
+ */

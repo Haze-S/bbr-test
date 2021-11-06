@@ -1,0 +1,53 @@
+/* for footer */
+
+
+footer *{
+  font-size: xx-small;
+  
+}
+
+#madeBy{
+  text-align: center;
+  
+}
+/* footer의 writer container */
+#writerContainer{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size : 10px;
+  justify-items: center;
+}
+
+
+/* writer 별 div  */
+.footer-writer_div{
+  
+  
+  width: 80%;
+  background-color: var(--writerContainer);
+  margin: 2px;
+  padding: 2px;
+  border-radius: 5%;
+  border-color:none;
+
+}
+
+.writer-contact_information{
+  text-align: left;
+}
+
+
+
+
+.fa-github{
+  font-size: xx-small ;
+  color: black;
+  text-decoration: none;
+} 
+
+.fa-envelope-o{
+  font-size: xx-small ;
+  color:var(--red);
+  
+}
+
