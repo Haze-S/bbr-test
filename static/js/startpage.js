@@ -1,9 +1,22 @@
-const showUser = document.getElementById("js-allUser");
+
+function increaseAnimation(i, id, number) {
+  if((i <= number)){
+    id.innerText = i.toLocaleString();
+    setTimeout(()=>{increaseAnimation(i+1, id, number)}, 0.01);
+  }
+
+  }
 
 
 
 function updateTotalUser(data){
-  showUser.innerText= data.total;  
+  let showUser = document.getElementById("js-allUser");
+  // let speed = data.total.toString().length();
+  // console.log(speed)
+  let i = data.total > 300? data.total-300: 0; 
+  increaseAnimation(i,showUser, data.total);
+  
+  
 }
 
 

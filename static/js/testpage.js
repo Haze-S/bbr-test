@@ -83,7 +83,7 @@ function doSubmit(e) {
 }
 
 function init() {
-  console.log("hi");
+
   let initialMbties = { E: 0, I: 0, " J": 0, " P": 0, T: 0, F: 0 };
   localStorage.setItem("types", JSON.stringify(initialMbties));
   fetch("quest.json").then((response) =>
