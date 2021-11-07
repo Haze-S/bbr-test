@@ -15,6 +15,7 @@
   --bgcolor: rgb(241,235,230);
 }
 
+
 #mainSection * {
   font-size: 10px;
 }
@@ -22,18 +23,21 @@
 
 
 #introImage{
-  margin: 20px;
-  width:60%;
+  
+  width:80%;
 }
 
 
 #testLinkContainer a{
   background-image: url("../img/intro_btn.png");
+  background-repeat: no-repeat;
   background-size: 100%;
   color:white;
   display: inline-block;
-  padding: 20px 30px;
-  line-height: 20px;
+  padding: 5%;
+  font-size: 15px;
+  margin: 10px 2px;
+
 }
 
 #participant{
@@ -41,6 +45,7 @@
   margin: 20px 0px;
 }
 #participant p{
+  font-size:18px;
   font-weight: bold;
   margin: 10px 0px;
 }
@@ -53,38 +58,3 @@
   ;
 }
 
-/* #testLinkContainer{
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 16%;
-  color:white;
-  background-color: var(--brown);
-  box-shadow: inset 0px -5px var(--stick);
-  line-height: 20px;
-  
-}
-
-#testLinkContainer:active{
-  background-color: var(--stick);
-  box-shadow: inset 0 -10px var(--brown);
-  line-height: 20px;
-} */
-
-/* 
-h1{
-  margin: 20px 2px 40px 2px;
-  font-family: 'Jua', sans-serif;
-  text-align: center;
-  font-weight: bolder;
-  color: var(--brown);
-  text-decoration: underline;
-  text-decoration-color: var(--stick);
-  text-underline-offset: -1px -1px;
-  text-shadow: 2px 3px var(--stick);  
-}
-
-#h1-ro_style{
- color:var(--stick);
- text-shadow: 2px 3px var(--brown);
-}
- */
