@@ -1,6 +1,7 @@
 // last: 2021.11.2.23:12
 // Team: FogNerdCross
-
+// resultBtn hidden/show
+const resultBtn = document.getElementById('resultBtn');
 // 퀘스트를 받아오는 문장
 
 // 퀘스트 문제를 파라미터로 받아서 돔 안에 텍스트를 바꿔주기 위함
@@ -42,8 +43,9 @@ function saveResult(name, value) {
     answer[name] = value;
     let answerJson = JSON.stringify(answer);
     localStorage.setItem("result", answerJson);
+    }
   }
-}
+
 
 // testBtnClick(e)과 doSubmit(e)는
 // 질문의 버튼을 클릭시 발생한다.
@@ -54,22 +56,19 @@ function saveResult(name, value) {
 function testBtnClick(e) {
   // 버튼의 {이름:value}객체를 localstorage에 저장하는 함수
   saveResult(e.target.name, e.target.value);
-
+  localStorage.setItem('now', e.target.name);
+  
   // TODO:
 }
 
-// 버튼 클릭시 form의 이벤트
-function doSubmit(e) {
-  e.preventDefault();
-  // ex) quest = 'quest1'
-  let quest = e.submitter.name;
-  // 임시로 적어놓은 코드
-  let next = parseInt(quest.replace("quest", "")) + 1;
-  // fetch 통신 quest.json받아오기
-  fetch("quest.json").then((response) =>
+
+//quest 받는 함수
+const get_quest = () =>{
+  fetch('./quest').then((response) =>
     response.json().then((data) => {
       //data => {quest1:{}, quest2:{} 타입으로 }
-      // TODO []여기에 변수명 적어서 접근이 안됨 해결해야함
+      // TODO []여기에 변수명 적어서 접근이 안됨 해결해야함>>for 문으로 해결
+      // *해결완료 
       for (let key in data) {
         // console.log(data[key])
         if (key == next) {
@@ -80,17 +79,47 @@ function doSubmit(e) {
       }
     })
   );
+};
+
+
+
+
+// 버튼 클릭시 form의 이벤트
+function doSubmit(e) {
+  e.preventDefault();
+  // ex) quest = 'quest1'
+  let quest = e.submitter.name;
+  // 임시로 적어놓은 코드
+  
+  let next = parseInt(quest.replace("quest", "")) + 1;
+  // fetch 통신 quest.json받아오기
+  // next 를 기점으로 해야하는 작업이 다름
+  if (next <20){
+    get_quest();
+
+  }else{
+    //TODO구현해야하는 부분 
+    showResultBtn();
+    hiddenquestArticle();
+    let type = getType();
+    postType(type);
+
+  }
 }
+
+
+
+
 
 function init() {
 
-  let initialMbties = { E: 0, I: 0, " J": 0, " P": 0, T: 0, F: 0 };
+  let initialMbties = { E: 0, I: 0, J: 0, P: 0, T: 0, F: 0 };
   localStorage.setItem("types", JSON.stringify(initialMbties));
-  fetch("quest.json").then((response) =>
+  fetch('./quest').then((response) =>
     response.json().then((data) => {
       //data => {quest1:{}, quest2:{} 타입으로 }
       // TODO []여기에 변수명 적어서 접근이 안됨 해결해야함
-      changeQuest(data[1]);
+      changeQuest(data);
     })
   );
 }
