@@ -1,9 +1,13 @@
 /* for footer */
 
+footer{
+  margin:10%;
+}
 
 footer *{
-  font-size: xx-small;
-  
+  font-size: 10px;
+  font-weight: bold;
+  color:var(--brown,0.2);
 }
 
 #madeBy{
