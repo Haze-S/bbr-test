@@ -2,34 +2,7 @@
 // Team: FogNerdCross
 // resultBtn hidden/show
 const resultBtn = document.getElementById('resultBtn');
-// 퀘스트를 받아오는 문장
 
-// 퀘스트 문제를 파라미터로 받아서 돔 안에 텍스트를 바꿔주기 위함
-function changeQuest(quest) {
-  //TODO quest의 내용을 서버에서 받아오기때문에, 어떻게 바뀔지는 기다려 보아야 함
-  let headContainer = document.getElementById("js-questText");
-  let btnlist = document.getElementsByClassName("js-test-form_btn");
-  // ex) Q1. 친구와 여행을 갔다. 배가고픈 당신? 당신이 향한곳은?
-  headContainer.innerText = quest.quest;
-  // 각 버튼의 innerText로 들어갈 내용들 -> 이건 삭제되어야 함
-
-  let savetype = () => {
-    let mbties = JSON.parse(localStorage.getItem("types"));
-    // 타입을 저장시키는 함수를 구현해야합니다
-    for (let mbti in mbties) {
-      if (quest.type == mbti) {
-        mbtites.mbti += 1;
-        localStorage.setItem("types", JSON.stringify(mbties));
-        break;
-      }
-    }
-  };
-  savetype();
-  for (let i = 0; i < 3; i++) {
-    // btn클래스 -> 각 버튼의 이름을 quest.count로 설정
-    btnlist[i].name = quest.count;
-  }
-}
 
 // testBtnClick 클릭 시 응답결과를 저장하기 위함
 function saveResult(name, value) {
@@ -62,8 +35,36 @@ function testBtnClick(e) {
 }
 
 
+// 퀘스트 문제를 파라미터로 받아서 돔 안에 텍스트를 바꿔주기 위함
+function changeQuest(quest) {
+  //TODO quest의 내용을 서버에서 받아오기때문에, 어떻게 바뀔지는 기다려 보아야 함
+  let headContainer = document.getElementById("js-questText");
+  let btnlist = document.getElementsByClassName("js-test-form_btn");
+  // ex) Q1. 친구와 여행을 갔다. 배가고픈 당신? 당신이 향한곳은?
+  headContainer.innerText = quest.quest;
+  let mbties = JSON.parse(localStorage.getITem('mbties'));
+  console.log('mbties')
+  console.log(mbties)
+  // 타입을 저장시키는 함수를 구현해야합니다
+  for (let mbti in mbties) {
+    if (quest.type == mbti) {
+      mbtites.mbti += 1;
+      localStorage.setItem("types", JSON.stringify(mbties));
+      break;
+    }
+  };
+
+  
+  for (let i = 0; i < 3; i++) {
+    // btn클래스 -> 각 버튼의 이름을 quest.count로 설정
+    btnlist[i].name = quest.count;
+  }
+}
+
+
+
 //quest 받는 함수
-const get_quest = () =>{
+const get_quest = (next) =>{
   fetch('./quest').then((response) =>
     response.json().then((data) => {
       //data => {quest1:{}, quest2:{} 타입으로 }
@@ -73,7 +74,7 @@ const get_quest = () =>{
         // console.log(data[key])
         if (key == next) {
           console.log(key);
-
+s
           changeQuest(data[key]);
         }
       }
@@ -81,7 +82,13 @@ const get_quest = () =>{
   );
 };
 
-
+const toggleShowing =(result, test)=>{
+ test.classList.remove('showing');
+ test.classList.add('hidden');
+ result.classList.add('showing');
+ result.classList.remove('hidden'); 
+ console.log('change')
+}
 
 
 // 버튼 클릭시 form의 이벤트
@@ -95,12 +102,14 @@ function doSubmit(e) {
   // fetch 통신 quest.json받아오기
   // next 를 기점으로 해야하는 작업이 다름
   if (next <20){
-    get_quest();
+    get_quest(next);
 
   }else{
     //TODO구현해야하는 부분 
-    showResultBtn();
-    hiddenquestArticle();
+    let resultArticle = document.getElementById('resultArticle');
+    let testArticle = document.getElementById('testArticle');
+    // toggleShowing( resultArticle, testArticle);
+    
     let type = getType();
     postType(type);
 
@@ -111,17 +120,14 @@ function doSubmit(e) {
 
 
 
+
+
 function init() {
 
-  let initialMbties = { E: 0, I: 0, J: 0, P: 0, T: 0, F: 0 };
-  localStorage.setItem("types", JSON.stringify(initialMbties));
-  fetch('./quest').then((response) =>
-    response.json().then((data) => {
-      //data => {quest1:{}, quest2:{} 타입으로 }
-      // TODO []여기에 변수명 적어서 접근이 안됨 해결해야함
-      changeQuest(data);
-    })
-  );
+  let initialMbties = { E: 0, I:0, J: 0, P: 0, S: 0, N: 0 };
+  localStorage.setItem("mbties", JSON.stringify(initialMbties));
+  get_quest(0);
+  // toggleShowing( resultArticle, testArticle);
 }
 
 init();

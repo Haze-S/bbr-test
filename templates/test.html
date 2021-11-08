@@ -26,22 +26,22 @@
     
     
     <section id="testContainer">
-      <form id="js-questForm" onsubmit="doSubmit(event)">
-          <p id="js-questText">질문</p>
-        <div>
-          <label for="">
-            <button onclick="testBtnClick(event)" name = "1" value="-1" class="js-test-form_btn test-form_btn">아니다</button>
-          </label>
-          <label for="">
-            <button onclick="testBtnClick(event)" name = "1" value="0" class='js-test-form_btn test-form_btn'>보통이다</button>
-          </label>
-          <label for="">
-            <button onclick="testBtnClick(event)" name = "1" value="1" class="js-test-form_btn test-form_btn">그렇다</button>
-          </label>
-        </div>
-      </form>
-
-    <a href="/result">결과보러가기</a>
+      <article id= 'testArticle'>
+        <form id="js-questForm" class="showing" onsubmit="doSubmit(event)">
+            <label id="js-questContainer">
+                <span id="js-questNumber">Q1.</span>
+                <span id="js-questText">질문내용용용</span>
+                </label>
+          <div id="testBtnContainer">
+              <button onclick="testBtnClick(event)" name = "1" value="1" class="js-test-form_btn test-form_btn">그렇다</button>
+              <button onclick="testBtnClick(event)" name = "1" value="0" class='js-test-form_btn test-form_btn'>보통이다</button>
+              <button onclick="testBtnClick(event)" name = "1" value="-1" class="js-test-form_btn test-form_btn">아니다</button>
+          </div>
+        </form>
+      </article>
+      <article id ="resultArticle" class="hidden">
+        <a href="/result">결과보러가기</a>
+      </article>
 
     </section>
     

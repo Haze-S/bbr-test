@@ -7,3 +7,68 @@
 @import './layout/header.css';
 @import './layout/footer.css';
 
+.hidden{
+    display: none;
+}
+
+.showing{
+    display: block;
+}
+
+#js-questContainer{
+    margin: 0% 10%;
+    color:var(--brown2);
+    font-family: 'Jua', sans-serif;
+
+}
+#js-questNumber{
+    text-shadow: 0px 3px var(--stick2);
+    font-size:20px;
+    display: block;
+    text-align: left;
+    margin-bottom: 10%;
+}
+#js-questText{
+    /*padding-top: 20%;*/
+    display: block;
+    font-size:20px;
+
+
+}
+
+#testContainer{
+    height: 100%;
+}
+#testArticle{
+    height: 100%;
+
+}
+#js-questForm{
+    height: 100%;
+    display: grid;
+    grid-template-rows: 3fr 4fr;
+}
+
+#testBtnContainer{
+
+    display:grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin: 0% 10%;
+    align-items: center;
+    justify-items: center;
+    /*width: 90%;*/
+    height: 100%;
+}
+
+#testBtnContainer button{
+    /*padding: 1% 0%;*/
+    border:none;
+    height: 60%;
+    width: 80%;
+    background-color:var(--brown2);
+    color:var(--bgcolor);
+    font-size: 18px;
+    font-family: Jua;
+    box-shadow: inset -3em 0px var(--stick2);
+    border-radius: 5em 4em 4em 5em;
+}
