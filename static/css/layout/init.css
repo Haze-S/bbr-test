@@ -22,12 +22,12 @@ html{
 }
 
 body {
-  min-width: 320px;
-  max-width: 400px;
+  /* min-width: 320px; */
+  /* max-width: 400px; */
   margin: 0 auto;
   /*border: 1px solid red;*/
   display: grid;
-  grid-template-rows: 2fr 4fr 1fr;
+  grid-template-rows: 2fr 7fr 1fr;
 
 }
 
