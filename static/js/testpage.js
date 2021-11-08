@@ -74,7 +74,7 @@ const get_quest = (next) =>{
         // console.log(data[key])
         if (key == next) {
           console.log(key);
-s
+
           changeQuest(data[key]);
         }
       }
@@ -82,12 +82,9 @@ s
   );
 };
 
-const toggleShowing =(result, test)=>{
- test.classList.remove('showing');
- test.classList.add('hidden');
- result.classList.add('showing');
- result.classList.remove('hidden'); 
- console.log('change')
+const toggleShowing =(test)=>{
+//  console.log(test.classlist());
+//  test.classList.add('hidden');
 }
 
 
@@ -127,7 +124,7 @@ function init() {
   let initialMbties = { E: 0, I:0, J: 0, P: 0, S: 0, N: 0 };
   localStorage.setItem("mbties", JSON.stringify(initialMbties));
   get_quest(0);
-  // toggleShowing( resultArticle, testArticle);
+  toggleShowing(testArticle);
 }
 
 init();
