@@ -17,7 +17,7 @@
 
 
 #introImage{
-  
+    
   width:80%;
 }
 
@@ -25,12 +25,13 @@
 #testLinkContainer a{
   background-image: url("../img/intro_btn.png");
   background-repeat: no-repeat;
+  background-position: center;
   background-size: 100%;
   color:white;
   display: inline-block;
-  padding: 5%;
+  padding: 4vh;
   font-size: 15px;
-  margin: 10px 2px;
+  /* margin: 10px 2px; */
 
 }
 

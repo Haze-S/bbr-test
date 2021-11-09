@@ -5,16 +5,21 @@ function apply_height(){
 
   let h= window.innerHeight;
   let w = window.innerWidth;
-
+  // body.style.height =w +px;
   if (h/w > 2){
     body.style.height = w*2+px;
     body.style.width = w;
 
-  }else if (h/w >1.5){
+  }else if (h/w >1){
     body.style.height = h +px;
-    body.style.width= w + px;
+    body.style.maxWidth= w*1/2+px;
+    body.style.margin= '0 auto';
   }else{
-    body.style.width= w*2/3+px;
+    body.style.minWidth= w*1/4 + px;
+
+    body.style.maxWidth= w*1/3+px;
+    body.style.margin= '0 auto';
+    body.style.heigh = h + px;
   }
 
   // if (window.innerHeight > 900){
@@ -39,3 +44,5 @@ function apply_height(){
 }
   
 window.onload= apply_height();
+
+window.addEventListener('resize',apply_height);
