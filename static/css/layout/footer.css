@@ -1,7 +1,10 @@
 /* for footer */
 
-footer{
-  margin:10%;
+footer {
+  display: grid;
+  justify-content: space-evenly;
+  align-content: space-around;
+
 }
 
 footer *{
@@ -26,11 +29,11 @@ footer *{
 /* writer 별 div  */
 .footer-writer_div{
   
-  
+  height: 30%; 
   width: 80%;
   background-color: var(--writerContainer);
-  margin: 2px;
-  padding: 2px;
+  margin: 1vh;
+  padding: 1vh;
   border-radius: 5%;
   border-color:none;
 
