@@ -9,12 +9,12 @@ function increaseAnimation(i, id, number) {
 
 
 
-function updateTotalUser(data){
+function updateTotalUser(total){
   let showUser = document.getElementById("js-allUser");
   // let speed = data.total.toString().length();
   // console.log(speed)
-  let i = data.total > 300? data.total-300: 0; 
-  increaseAnimation(i,showUser, data.total);
+  let i = total > 300? total-300: 0; 
+  increaseAnimation(i,showUser, total);
   
   
 }
@@ -23,7 +23,7 @@ function updateTotalUser(data){
 document.onload = fetch('/start')
     .then(response=>response.json()
     .then(data=>{
-    updateTotalUser(data)
+    updateTotalUser(data.total.total)
     }
     )
   )
