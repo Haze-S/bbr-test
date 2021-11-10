@@ -19,13 +19,20 @@ function updateTotalUser(total){
   
 }
 
+let getTotalUser = ()=> {
+  return fetch('/start')
+  .then(response=>response.json())
+      
+}
 
-document.onload = fetch('/start')
-    .then(response=>response.json()
-    .then(data=>{
-    updateTotalUser(data.total.total)
-    }
-    )
+
+
+
+document.onload = getTotalUserNumber.then(data=>{
+  updateTotalUser(data.total.total)
+  }
   )
+    
+
 
 

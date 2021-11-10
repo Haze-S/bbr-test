@@ -35,4 +35,12 @@ body {
 a{
   text-decoration: none;
 }
+a :active{
+  transform: translateY(4px);
+  transform: translateX(2px);
+}
 
+button :active{
+  transform: translateX(4px);
+
+}
