@@ -8,16 +8,15 @@ def home():
 
 @app.route('/start', methods=['GET'])
 def show_total():
-    # pymongo 집계 함수? 찾아 적용
-    # secret.db.users.aggregate([
-    #         {'$group': {
-    #             _id: '$type',
-    #             total: {$sum: '$count'}
-    #             }
-    #         }
-    #     ])
-    total = secret.db.users.count()
-    return jsonify({'total': total})
+    total = secret.db.users.aggregate([
+        {'$group':
+             {
+                 '_id' : 'null',
+                 'total' : {'$sum' : '$count'}
+             }}
+    ])
+    for count in total:
+        return jsonify({'total': count})
 
 @app.route('/test', methods=['GET'])
 def test_html():
@@ -40,6 +39,12 @@ def show_result():
 def detail():
     keyword = request.args.get('type')
     result_type = list(secret.db.types.find({'type': {'$regex': keyword}}))
+    # [{
+    #     "$group":
+    #         {"_id": "$user",
+    #          "num_tutorial": {"$sum": 1}
+    #          }}
+    # ])
     return jsonify({'result': result_type})
 
 
