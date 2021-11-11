@@ -1,0 +1,10 @@
+click==8.0.3
+colorama==0.4.4
+Flask==2.0.2
+itsdangerous==2.0.1
+Jinja2==3.0.3
+MarkupSafe==2.0.1
+pymongo==3.12.1
+Werkzeug==2.0.2
+
+서버에서 자동 배포 할 때 ....... 기존에 쓰던... 버전을 기록?

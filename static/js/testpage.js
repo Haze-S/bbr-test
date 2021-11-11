@@ -70,10 +70,13 @@ const toggleShowing = (doc)=>{
   if (doc.classList.contains('hidden')){
     doc.classList.remove('hidden');
     doc.classList.add('showing');
-  }else{
+  }
+
+  if(doc.classList.contains('showing')){
     doc.classList.remove('showing');
     doc.classList.add('hidden');
-  } 
+  }
+
 }
 
 let calcType= () =>{
@@ -89,16 +92,8 @@ let calcType= () =>{
 }
 
 
-//POST type 
-async function postType(type){
-  // let result = JSON.stringify({result: type})
-  let result = {result: type}
-  const response = await fetch('/result',{
-    method: 'POST',
-    body: JSON.stringify(result)
-  });
-  return response.json();
-  }
+
+
 
 
 
@@ -120,12 +115,32 @@ function doSubmit(e) {
     
     //TODO
     let type = calcType();
-    postType(type).then(data=>{ console.log(data)});
-
+    // getType(type).then(data=>{
+    //   console.log(data);
+    //   drawResult(data)});
 
   }
 }
 
+//POST type
+async function getType(type) {
+
+  return await fetch(`./result/${type}`).then(Response => Response.json());
+}
+getType('bbaro').then(data=>{
+      drawResult(data.data);
+})
+
+function drawResult(type) {
+  console.log(type);
+  let name = document.getElementById('resultTypeName');
+  let img = document.getElementById('resultImg');
+  let description = document.getElementById("resultDescription");
+  name.innerText = type.name;
+  img.src = type.image;
+  description.innerText = type.desc;
+
+}
 
 
 
